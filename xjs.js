@@ -48,9 +48,25 @@ function x(selector) {
     |--------------------------------------------------------------------------
     */
 	self.sum = function(elements) {
-		if(!elements) return;
+		if(!elements && elements.length > 0) return;
 		let acc = 0;
 		elements.forEach((elem) => acc += parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
+		return self;
+	}
+
+	self.mul = function(elements) {
+		if(!elements && elements.length > 0) return;
+		let acc = 1;
+		elements.forEach((elem) => acc *= parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
+		return self;
+	}
+
+	self.sub = function(elements) {
+		if(!elements && elements.length > 0) return;
+		let acc = 0;
+		elements.forEach((elem) => acc -= parseInt(document.querySelector(elem).innerHTML));
 		self.element.innerHTML = acc;
 		return self;
 	}
