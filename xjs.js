@@ -82,10 +82,17 @@ function x(selector) {
     		method: 'GET',
     		headers: {'Content-Type': 'application/json'},
     		credentials: 'same-origin'
-    	}).then(resp => {
+    	}).then((resp) => {
     		if(resp.status != 200) throw new Error(resp.statusText)
-    			return resp.text()
-    	})
+			return resp.text()
+    	}).then((resp) => {
+			if(selector){
+				self.element.innerHTML = resp;
+			} else {
+				return resp;
+			}
+			
+		})
     }
 
     return self;

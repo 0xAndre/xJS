@@ -32,9 +32,10 @@ const {
 x('#test').css(decor);
 ```
 
-## JSON GET and Add
+## JSON GET
 ```js
     x().jsonGet('https://jsonplaceholder.typicode.com/todos/1').then(x('#test').add)
+    x('#test').jsonGet('https://jsonplaceholder.typicode.com/todos/1');
 ```
 
 ## SUM
