@@ -2,8 +2,7 @@ function x(selector) {
 	var self = {};
 
 	self.selector = selector;
-	self.element = whichSelector(selector);
-	
+	self.element = document.querySelector(self.selector);
 
 	/*
     |--------------------------------------------------------------------------
@@ -51,24 +50,24 @@ function x(selector) {
 	self.sum = function(elements) {
 		if(!elements && elements.length > 0) return;
 		let acc = 0;
-		elements.forEach((elem) => acc += parseInt(whichSelector(elem).innerHTML));
-		self.element.innerHTML += acc;
+		elements.forEach((elem) => acc += parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
 		return self;
 	}
 
 	self.mul = function(elements) {
 		if(!elements && elements.length > 0) return;
 		let acc = 1;
-		elements.forEach((elem) => acc *= parseInt(whichSelector(elem).innerHTML));
-		self.element.innerHTML += acc;
+		elements.forEach((elem) => acc *= parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
 		return self;
 	}
 
 	self.sub = function(elements) {
 		if(!elements && elements.length > 0) return;
 		let acc = 0;
-		elements.forEach((elem) => acc -= parseInt(whichSelector(elem).innerHTML));
-		self.element.innerHTML += acc;
+		elements.forEach((elem) => acc -= parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
 		return self;
 	}
 
@@ -92,6 +91,7 @@ function x(selector) {
 			} else {
 				return resp;
 			}
+			
 		})
     }
 
@@ -102,15 +102,6 @@ function x(selector) {
 | xJS FUNCTIONS 
 |--------------------------------------------------------------------------
 */
-function whichSelector(selector) {
-	if(document.querySelector(selector)) {
-		return document.querySelector(selector);
-	} else if (document.querySelector(`#${selector}`)) {
-		return document.querySelector(`#${selector}`);
-	} else {
-		document.querySelector(`.${selector}`);
-	}
-}
 function singleCSS(name, value, self) {
 	self.element.style[name] = value;
 }
