@@ -26,7 +26,7 @@ function x(selector) {
     |--------------------------------------------------------------------------
     */
     self.add = (payload) => {
-    	if(!payload) return;
+		if(!payload) return;
     	self.element.innerHTML = payload;
     	return self;
     }
@@ -47,18 +47,20 @@ function x(selector) {
     | MATH 
     |--------------------------------------------------------------------------
     */
-    self.sum = function(n1, n2) {
-    	if(!n1 && !n2) return;
-    	self.element.innerHTML = parseInt(n1, 10) + parseInt(n2, 10)
-    	return self;
-    }
+	self.sum = function(elements) {
+		if(!elements) return;
+		let acc = 0;
+		elements.forEach((elem) => acc += parseInt(document.querySelector(elem).innerHTML));
+		self.element.innerHTML = acc;
+		return self;
+	}
 
 	/*
     |--------------------------------------------------------------------------
     | AJAX 
     |--------------------------------------------------------------------------
     */
-    self.jsonGet = (path) => {
+    self.jsonGet = function (path) {
     	if(!path) return;
     	return fetch(path, {
     		method: 'GET',

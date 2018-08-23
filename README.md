@@ -39,12 +39,20 @@ x('#test').css(decor);
 
 ## SUM
 ```html
-    <div id="res"><div>
+    <h1 id="val1">4</h1>
+    <h1 id="val2">4</h1>
+    <h1 id="val3">5</h1>
+    <h1 id="val4">2</h1>
+    <h1 id="val5">1</h1>
+
+    <h1 id="res"></h1>
 ```
 ```js
-   x('#res').sum(3, 3); // res -> 6
-   x('#res').sum('3', 3); // res -> 6
-   x('#res').sum('3', '3'); // res -> 6
+   x('#res').sum(['#val1', '#val2', '#val3', '#val4', '#val5'])
+```
+
+```html
+    <h1 id="res">16</h1>
 ```
 
 License
