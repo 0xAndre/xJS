@@ -25,9 +25,9 @@ function x(selector) {
     | DOM 
     |--------------------------------------------------------------------------
     */
-    self.add = (child) => {
-    	if(!child) return;
-    	self.element.innerHTML = child;
+    self.add = (payload) => {
+    	if(!payload) return;
+    	self.element.innerHTML = payload;
     	return self;
     }
 
@@ -39,6 +39,17 @@ function x(selector) {
     self.on = function(type, callback) {
     	if(!type && !callback) return;
     	self.element['on' + type] = callback;
+    	return self;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | MATH 
+    |--------------------------------------------------------------------------
+    */
+    self.sum = function(n1, n2) {
+    	if(!n1 && !n2) return;
+    	self.element.innerHTML = parseInt(n1, 10) + parseInt(n2, 10)
     	return self;
     }
 

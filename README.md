@@ -37,6 +37,16 @@ x('#test').css(decor);
     x().jsonGet('https://jsonplaceholder.typicode.com/todos/1').then(x('#test').add)
 ```
 
+## SUM
+```html
+    <div id="res"><div>
+```
+```js
+   x('#res').sum(3, 3); // res -> 6
+   x('#res').sum('3', 3); // res -> 6
+   x('#res').sum('3', '3'); // res -> 6
+```
+
 License
 ----
 
