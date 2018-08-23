@@ -3,6 +3,7 @@
 <p align="center">
   <img src="https://github.com/x0uter/xJS/raw/master/assets/xjs.png"/>
 </p>
+
 [![N|Solid](https://github.com/x0uter/xJS/raw/master/assets/xjs.gif)](https://github.com/x0uter/xJS)
 
 Make it simple.
