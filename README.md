@@ -15,11 +15,13 @@ Add xJS Library to your HTML file
 
 ```html
     <h1 id="test">TEST</h1>
+    <div>TEST</div>
 ```
 
 ## CSS
 ```js
-    x('#test').css('color', 'red');
+    x('test').css('color', 'red');
+    x('div').css('color', 'blue');
 ```
 
 ### CSS as Object
@@ -29,13 +31,13 @@ const {
     'text-align': 'center'
 }
 					    
-x('#test').css(decor);
+x('test').css(decor);
 ```
 
 ## JSON GET
 ```js
-    x().jsonGet('https://jsonplaceholder.typicode.com/todos/1').then(x('#test').add)
-    x('#test').jsonGet('https://jsonplaceholder.typicode.com/todos/1');
+    x().jsonGet('https://jsonplaceholder.typicode.com/todos/1').then(x('test').add)
+    x('test').jsonGet('https://jsonplaceholder.typicode.com/todos/1');
 ```
 
 ## SUM
@@ -45,15 +47,16 @@ x('#test').css(decor);
     <h1 id="val3">5</h1>
     <h1 id="val4">2</h1>
     <h1 id="val5">1</h1>
+    <div>4<div>
 
     <h1 id="res"></h1>
 ```
 ```js
-   x('#res').sum(['#val1', '#val2', '#val3', '#val4', '#val5'])
+   x('res').sum(['val1', 'val2', 'val3', 'val4', 'val5', 'div'])
 ```
 
 ```html
-    <h1 id="res">16</h1>
+    <h1 id="res">Result: 20</h1>
 ```
 
 License
