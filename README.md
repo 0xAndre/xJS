@@ -49,7 +49,7 @@ x('test').css(decor);
     <h1 id="val5">1</h1>
     <div>4<div>
 
-    <h1 id="res"></h1>
+    <h1 id="res">Result: </h1>
 ```
 ```js
    x('res').sum(['val1', 'val2', 'val3', 'val4', 'val5', 'div'])
