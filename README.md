@@ -1,6 +1,8 @@
 # xJS - Javascript Library
 
-[![N|Solid](https://github.com/x0uter/xJS/raw/master/assets/xjs.png)](https://github.com/x0uter/xJS)
+<p align="center">
+  <img src="https://github.com/x0uter/xJS/raw/master/assets/xjs.png"/>
+</p>
 [![N|Solid](https://github.com/x0uter/xJS/raw/master/assets/xjs.gif)](https://github.com/x0uter/xJS)
 
 Make it simple.
@@ -59,7 +61,7 @@ x('test').css(decor);
     <h1 id="res">Result: 20</h1>
 ```
 
+
 License
 ----
-
-MIT
+[![N|Solid](https://cdn-images-1.medium.com/max/800/1*C87EjxGeMPrkTuVRVWVg4w.png)]
