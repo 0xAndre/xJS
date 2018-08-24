@@ -114,6 +114,44 @@ function x(selector) {
 		})
 	}
 
+	self.jsonPut = function (path, data) {
+		if (!path && !data) return;
+		return fetch(path, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data),
+			credentials: 'same-origin'
+		}).then((resp) => {
+			if (resp.status != 200) throw new Error(resp.statusText)
+			return resp.text()
+		}).then((resp) => {
+			if (selector) {
+				self.element.innerHTML = resp;
+			} else {
+				return resp;
+			}
+		})
+	}
+
+	self.jsonDelete = function (path, data) {
+		if (!path && !data) return;
+		return fetch(path, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data),
+			credentials: 'same-origin'
+		}).then((resp) => {
+			if (resp.status != 200) throw new Error(resp.statusText)
+			return resp.text()
+		}).then((resp) => {
+			if (selector) {
+				self.element.innerHTML = resp;
+			} else {
+				return resp;
+			}
+		})
+	}
+
 	return self;
 }
 /*
