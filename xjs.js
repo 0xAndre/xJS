@@ -32,6 +32,12 @@ function x(selector) {
 		return self;
 	}
 
+	self.attr = (attr, value) => {
+		if(!attr && !value) return;
+		self.element[attr] = value;
+		return self;
+	}
+
 	/*
 	|--------------------------------------------------------------------------
 	| EVENTS 

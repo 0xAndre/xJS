@@ -22,9 +22,13 @@ or
 
 ## Examples
 
+## ATTR
 ```html
-    <h1 id="test">TEST</h1>
-    <div>TEST</div>
+    <a id="url">github<a>
+```
+
+```js
+    x('url').attr('href', 'https://www.github.com')
 ```
 
 ## CSS
