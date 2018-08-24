@@ -12,6 +12,12 @@ Make it simple.
 Add xJS Library to your HTML file
 ```html
     <script src="xjs.js"></script>
+    <script src="xjs.min.js"></script>
+```
+or
+```html
+    <script src="https://raw.githubusercontent.com/x0uter/xJS/master/xjs.js"></script>
+    <script src="https://raw.githubusercontent.com/x0uter/xJS/master/xjs.min.js"></script>
 ```
 
 ## Examples
