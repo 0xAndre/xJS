@@ -6,10 +6,10 @@ function x(selector) {
 
 
 	/*
-	  |--------------------------------------------------------------------------
-	  | VISUALS 
-	  |--------------------------------------------------------------------------
-	  */
+	|--------------------------------------------------------------------------
+	| VISUALS 
+	|--------------------------------------------------------------------------
+	*/
 	self.css = (p1, p2) => {
 		if (!p1 && !p2) return;
 
@@ -22,10 +22,10 @@ function x(selector) {
 	}
 
 	/*
-	  |--------------------------------------------------------------------------
-	  | DOM 
-	  |--------------------------------------------------------------------------
-	  */
+	|--------------------------------------------------------------------------
+	| DOM 
+	|--------------------------------------------------------------------------
+	*/
 	self.add = (payload) => {
 		if (!payload) return;
 		self.element.innerHTML = payload;
@@ -33,10 +33,10 @@ function x(selector) {
 	}
 
 	/*
-	  |--------------------------------------------------------------------------
-	  | EVENTS 
-	  |--------------------------------------------------------------------------
-	  */
+	|--------------------------------------------------------------------------
+	| EVENTS 
+	|--------------------------------------------------------------------------
+	*/
 	self.on = function (type, callback) {
 		if (!type && !callback) return;
 		self.element['on' + type] = callback;
@@ -73,15 +73,34 @@ function x(selector) {
 	}
 
 	/*
-	  |--------------------------------------------------------------------------
-	  | AJAX 
-	  |--------------------------------------------------------------------------
-	  */
+	|--------------------------------------------------------------------------
+	| AJAX 
+	|--------------------------------------------------------------------------
+	*/
 	self.jsonGet = function (path) {
 		if (!path) return;
 		return fetch(path, {
 			method: 'GET',
 			headers: { 'Content-Type': 'application/json' },
+			credentials: 'same-origin'
+		}).then((resp) => {
+			if (resp.status != 200) throw new Error(resp.statusText)
+			return resp.text()
+		}).then((resp) => {
+			if (selector) {
+				self.element.innerHTML = resp;
+			} else {
+				return resp;
+			}
+		})
+	}
+
+	self.jsonPost = function (path, data) {
+		if (!path && !data) return;
+		return fetch(path, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data),
 			credentials: 'same-origin'
 		}).then((resp) => {
 			if (resp.status != 200) throw new Error(resp.statusText)

@@ -49,6 +49,11 @@ x('test').css(decor);
     x('test').jsonGet('https://jsonplaceholder.typicode.com/todos/1');
 ```
 
+## JSON POST
+```js
+    x().jsonPost('URI', {'id': 1, 'xjs': 'nice'})
+```
+
 ## SUM
 ```html
     <h1 id="val1">4</h1>
